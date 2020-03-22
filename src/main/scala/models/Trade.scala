@@ -1,3 +1,6 @@
 package models
 
-case class Trade(quantity: Int, price: Float, sellOrderId: Int, buyOrderId: Int)
+case class Trade(quantity: Double,
+                 price: Float,
+                 sellOrderId: Int,
+                 buyOrderId: Int)

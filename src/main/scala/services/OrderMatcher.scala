@@ -73,9 +73,9 @@ class OrderMatcher {
     }
   }
 
-  def isPrefectAllocation(quantity: Int): Boolean = quantity == 0
+  def isPrefectAllocation(quantity: Double): Boolean = quantity == 0
 
-  def isPartialAllocation(quantity: Int): Boolean = quantity > 0
+  def isPartialAllocation(quantity: Double): Boolean = quantity > 0
 
   def allocateOrder(order: Order, orderList: OrderList) = {
     val allocatedOrder = Order(
@@ -92,7 +92,7 @@ class OrderMatcher {
   }
 
   def changeOrderAllocation(order: Order,
-                            quantity: Int,
+                            quantity: Double,
                             orderList: OrderList) = {
     val changedOrder = Order(
       order.id,
@@ -108,7 +108,7 @@ class OrderMatcher {
     orderList.add(changedOrder)
   }
 
-  def createTrade(sellOrder: Order, buyOrder: Order, quantity: Int) = {
+  def createTrade(sellOrder: Order, buyOrder: Order, quantity: Double) = {
     val trade = Trade(quantity, sellOrder.price, sellOrder.id, buyOrder.id)
     tradeList.add(trade)
   }
